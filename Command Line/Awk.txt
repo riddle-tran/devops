@@ -1,0 +1,17 @@
+Syntax: awk '/search pattern 1/ {Actions} /search pattern 2/ {Actions}' file
+Trong đó: 
+    * search pattern là một biểu thức chính quy
+    * Actions là những câu lệnh sẽ được thực hiện
+    * file: file đầu vào Awk sẽ chấp nhận một vài kiểu pattern và action.
+Hoạt động:
+    1. Awk đọc file đầu vào theo từng dòng một
+    2. Mỗi dòng, Awk so khớp các pattern, nếu đúng thực hiện action tương ứng
+    3. search pattern và action có thể vắng mặt, nhưng không được khuyết cả 2
+    4. không có search pattern, Awk sẽ thực hiện action
+    5. action vắng mặt và khớp với pattern thì Awk in dòng đó
+    6. Mỗi câu lệnh trong phần action được phân tách nhau bởi dấu chấm phẩy
+Khởi tạo và kết thức:
+    BEGIN {Actions} // thực hiên Actions đầu tiên cho một pattern 
+        {Action} # Action for every line in a file, dấu # dùng comment
+    END {Actions} // thực hiện cuối cùng pattern 
+#Link: https://github.com/stephenturner/oneliners#basic-awk--sed
